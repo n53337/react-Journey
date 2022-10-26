@@ -3,4 +3,14 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  background-color: darkslategrey;
+  min-height: 80vh;
+}
+
+.btn {
+  padding: 0.8rem 1rem;
+  font-size: 2rem;
+  outline: none;
+  border: 2px solid white;
+  border-radius: 0.8rem;
 }
