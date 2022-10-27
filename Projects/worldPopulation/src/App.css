@@ -1,0 +1,42 @@
+/* Country Components Styles */
+main {
+  padding: 3rem min(10vw, 10rem);
+  display: flex;
+  flex-direction: column;
+  /* gap: 2rem; */
+}
+
+main > h1,
+.country {
+  margin-block: 1rem;
+}
+
+.country {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.country p {
+  font-weight: 600;
+  /* color: wheat; */
+}
+
+.sec1 {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sec1 > span {
+  max-width: 100%;
+  width: 40rem;
+  height: 1rem;
+  background-color: tomato;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  justify-self: start;
+  transition: 1s all ease-in;
+}
