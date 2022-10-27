@@ -52,6 +52,7 @@ const App = () => {
 
 // ! Components using Classes
 
+/*
 class Hi extends React.Component {
   constructor(props) {
     super(props);
@@ -63,8 +64,79 @@ class Hi extends React.Component {
   }
 }
 
-const App = () => {
-  return <Hi name="usef"></Hi>;
-};
+class App extends React.Component {
+  render() {
+    return <Hi name="usef"></Hi>;
+  }
+}
+*/
+
+// ! State introduction !important
+
+/*
+class St extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  state = {
+    counter: 0,
+  };
+
+  add = () => {
+    this.setState({ counter: this.state.counter + 1 });
+  };
+
+  sub = () => {
+    this.setState({ counter: this.state.counter - 1 });
+  };
+
+  render() {
+    return (
+      <main>
+        <h1>React State</h1>
+        <button onClick={this.add}>Count +1 </button>
+        <p>{this.state.counter}</p>
+        <button onClick={this.sub}>Count -1 </button>
+      </main>
+    );
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return <St></St>;
+  }
+}
+*/
+
+// ! Dog/Cat State practice
+
+class Animal extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  state = {
+    animal: "cat",
+    x: 0,
+  };
+
+  trigger = () => {
+    const animals = ["cat", "dog"];
+    this.setState({ x: this.state.x + 1 });
+    this.setState({ animal: animals[this.state.x % 2] });
+  };
+
+  render() {
+    return <h1 onClick={this.trigger}>{this.state.animal}</h1>;
+  }
+}
+
+class App extends React.Component {
+  render() {
+    return <Animal></Animal>;
+  }
+}
 
 export default App;
