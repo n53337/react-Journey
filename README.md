@@ -1,6 +1,6 @@
 # react-journey
 
-* i will update this repo once i learn something
+* am updating this repo while am learning react!
 
 > Note: for resourses, am using [react-docs](https://beta.reactjs.org), and [30daysofreact](https://github.com/Asabeneh/30-Days-Of-React)
 
