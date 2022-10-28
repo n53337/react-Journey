@@ -112,6 +112,7 @@ class App extends React.Component {
 
 // ! Dog/Cat State practice
 
+/*
 class Animal extends React.Component {
   constructor(props) {
     super(props);
@@ -127,7 +128,7 @@ class Animal extends React.Component {
     this.setState({ x: this.state.x + 1 });
     this.setState({ animal: animals[this.state.x % 2] });
   };
-
+  e;
   render() {
     return <h1 onClick={this.trigger}>{this.state.animal}</h1>;
   }
@@ -136,6 +137,88 @@ class Animal extends React.Component {
 class App extends React.Component {
   render() {
     return <Animal></Animal>;
+  }
+}
+*/
+
+// ! Conditional Rendering
+
+// A button component
+const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;
+
+// class based component
+class Header extends React.Component {
+  render() {
+    console.log(this.props.data);
+    const {
+      welcome,
+      title,
+      subtitle,
+      author: { firstName, lastName },
+      date,
+    } = this.props.data;
+
+    return (
+      <header>
+        <div className="header-wrapper">
+          <h1>{welcome}</h1>
+          <h2>{title}</h2>
+          <h3>{subtitle}</h3>
+          <p>
+            {firstName} {lastName}
+          </p>
+          <small>{date}</small>
+        </div>
+      </header>
+    );
+  }
+}
+
+class App extends React.Component {
+  state = {
+    loggedIn: false,
+  };
+  handleLogin = () => {
+    this.setState({
+      loggedIn: !this.state.loggedIn,
+    });
+  };
+
+  render() {
+    const data = {
+      welcome: "30 Days Of React",
+      title: "Getting Started React",
+      subtitle: "JavaScript Library",
+      author: {
+        firstName: "u53f",
+        lastName: "u53f",
+      },
+      date: "Oct 28, 2022",
+    };
+
+    const LoggedIn = () => {
+      return <h3>Welcome to your account</h3>;
+    };
+
+    const LoggedOut = () => {
+      return <h3>Please Login</h3>;
+    };
+
+    const status = this.state.loggedIn ? (
+      <LoggedIn></LoggedIn>
+    ) : (
+      <LoggedOut></LoggedOut>
+    );
+
+    const text = this.state.loggedIn ? "Logout" : "Log in";
+
+    return (
+      <div className="app">
+        <Header data={data} />
+        {status}
+        <Button text={text} onClick={this.handleLogin} />
+      </div>
+    );
   }
 }
 
