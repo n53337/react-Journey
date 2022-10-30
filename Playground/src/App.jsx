@@ -1,6 +1,6 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import React, { Component } from "react";
+import React, { Component, useState } from "react";
 
 // //!  Functional Components and Props
 /*
@@ -143,7 +143,7 @@ class App extends React.Component {
 
 // ! Conditional Rendering
 
-// /*
+/*
 // A button component
 const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;
 
@@ -210,14 +210,13 @@ class App extends React.Component {
     return (
       <div className="app">
         <Header data={data} />
-        {/* You can't use if statement iside jsx */}
         {this.state.loggedIn ? <LoggedIn></LoggedIn> : <LoggedOut></LoggedOut>}
         <Button text={text} onClick={this.handleLogin} />
       </div>
     );
   }
 }
-// */
+*/
 
 // ! Forms
 
@@ -251,4 +250,27 @@ class App extends Component {
   }
 }
 */
+
+// TODO Functional Components
+
+// ! useState
+
+const Counter = ({ name }) => {
+  const [counter, setCounter] = useState(0);
+
+  return (
+    <button onClick={() => setCounter(counter + 1)}>
+      {name}:{counter}
+    </button>
+  );
+};
+
+const App = () => {
+  return (
+    <>
+      <Counter name={"count"}></Counter>
+      <Counter name={"click"}></Counter>
+    </>
+  );
+};
 export default App;
