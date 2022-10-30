@@ -1,6 +1,6 @@
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import React from "react";
+import React, { Component } from "react";
 
 // //!  Functional Components and Props
 /*
@@ -143,6 +143,7 @@ class App extends React.Component {
 
 // ! Conditional Rendering
 
+/*
 // A button component
 const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;
 
@@ -218,6 +219,38 @@ class App extends React.Component {
         {status}
         <Button text={text} onClick={this.handleLogin} />
       </div>
+    );
+  }
+}
+*/
+
+// ! Forms
+
+// TODO: create a real-time data change app
+
+class App extends Component {
+  state = {
+    text: "",
+  };
+
+  showText = (e) => {
+    this.setState({ text: e.target.value });
+    console.log(e);
+  };
+
+  render() {
+    return (
+      <>
+        <form>
+          <input
+            type="text"
+            placeholder="Type Something..."
+            value={this.state.text}
+            onChange={this.showText}
+          />
+        </form>
+        <h1>{this.state.text}</h1>
+      </>
     );
   }
 }
