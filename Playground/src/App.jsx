@@ -143,7 +143,7 @@ class App extends React.Component {
 
 // ! Conditional Rendering
 
-/*
+// /*
 // A button component
 const Button = ({ text, onClick }) => <button onClick={onClick}>{text}</button>;
 
@@ -205,29 +205,25 @@ class App extends React.Component {
       return <h3>Please Login</h3>;
     };
 
-    const status = this.state.loggedIn ? (
-      <LoggedIn></LoggedIn>
-    ) : (
-      <LoggedOut></LoggedOut>
-    );
-
     const text = this.state.loggedIn ? "Logout" : "Log in";
 
     return (
       <div className="app">
         <Header data={data} />
-        {status}
+        {/* You can't use if statement iside jsx */}
+        {this.state.loggedIn ? <LoggedIn></LoggedIn> : <LoggedOut></LoggedOut>}
         <Button text={text} onClick={this.handleLogin} />
       </div>
     );
   }
 }
-*/
+// */
 
 // ! Forms
 
 // TODO: create a real-time data change app
 
+/*
 class App extends Component {
   state = {
     text: "",
@@ -254,5 +250,5 @@ class App extends Component {
     );
   }
 }
-
+*/
 export default App;
